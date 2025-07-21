@@ -6,16 +6,7 @@ import { expect, fn } from 'storybook/test';
 const meta = {
     title: 'Atoms/Button',
     component: Button,
-    args: { onClick: fn() },
-    // argTypes: {
-    //     children: {
-    //         control: {type: 'select'},
-    //         options: ['Zapisz', 'Dalej', 'Lorem....'],
-    //         mapping: {
-
-    //         }
-    //     }
-    // }
+    args: { onClick: fn() }
 } satisfies Meta<typeof Button>;
 
 export default meta;
