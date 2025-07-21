@@ -22,6 +22,7 @@ export default defineConfig({
       {
         extends: true,
         test: {
+          environment: 'jsdom',
           include: [
             'src/**/*.{test,spec}.?(c|m)[jt]s?(x)'
           ],

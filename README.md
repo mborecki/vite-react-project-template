@@ -1,69 +1,57 @@
-# React + TypeScript + Vite
+# Szablon dla projektów
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Ograniczenia :warning:
+ * szablon zakłada architekturę SPA + API **bez Server Side Renderingu**
 
-Currently, two official plugins are available:
+## Technologie/elementy
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Bazowa struktura: [vite.dev](https://vite.dev/)
+* Frontend:
+  * [react](https://react.dev/)
+  * Style: [CSS Modules](https://vite.dev/guide/features.html#css-modules)
+  * Wykonywanie zapytań do serwera: [Axios HTTP](https://axios-http.com/)
+  * Obsługa komunikacji z serwerem: [TanStack Query](https://tanstack.com/query/v5)
+  * Routing: [react Router](https://reactrouter.com/)
+  * Podstawowe Komponenty: [React Aria](https://react-spectrum.adobe.com/react-aria/getting-started.html)
+  * Obsługa formularzy: [React Hook Form](https://react-hook-form.com/)
+* Backend:
+  * TBA
+* Testy:
+  * Wizualne: [Storybook](https://storybook.js.org/)
+  * Jednostkowe: [Vitest](https://vitest.dev/)
+  * Mockowanie komunikacji z serwerem [Mock Service Worker](https://mswjs.io/)
+  * UI: [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 
-## Expanding the ESLint configuration
+------------------------------------------------
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## How to
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Integracja React Aria z React Hook Form
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Przykład: `src\components\widgets\name-form\name-form.tsx`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+#### Źródła
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+* https://react-spectrum.adobe.com/react-aria/forms.html#react-hook-form
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---------------------------------------
+## Testy:
+
+### Mockowanie API w testach aplikacji frontendowej
+
+Przykład: `src\network\requests\get-post.test.ts`
+
+#### Źródła
+
+* [MSW Intercepting request](https://mswjs.io/docs/http/intercepting-requests/)
+
+----------------------------------------------------------------------------------
+
+### Testy react hooks z react-query
+
+Przykład: `src\modules\post\use-post.test.tsx`
+
+#### Źródła
+
+* [TanStack Query Testing](https://tanstack.com/query/v5/docs/framework/react/guides/testing)
