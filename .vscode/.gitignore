@@ -1,0 +1,5 @@
+*
+!.gitignore
+!stories.code-snippets
+!settings.json
+!extensions.json

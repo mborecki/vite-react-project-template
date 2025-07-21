@@ -1,0 +1,22 @@
+{
+	"New Stories File": {
+		"isFileTemplate": true,
+		"scope": "typescript,typescriptreact",
+		"prefix": "__stories",
+		"body": [
+			"import type { Meta, StoryObj } from \"@storybook/react-vite\";",
+			"",
+			"const meta = {",
+			"    title: '${1:Widget}',",
+			"    component: ${1:Widget},",
+			"} satisfies Meta<typeof ${1:Widget}>;",
+			"",
+			"export default meta;",
+			"",
+			"type Story = StoryObj<typeof meta>;",
+			"",
+			"export const Base: Story = {}",
+			""
+		],
+	}
+}

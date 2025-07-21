@@ -24,6 +24,12 @@
 
 ------------------------------------------------
 
+## Ustawienia edytora (VS Code)
+
+### Nowy plik `*.stories.ts(x)`
+
+Jeżeli kożystamy z VS Code i mamy zainstalowaną wtyczkę "Auto Snippet" (jest na liście zalecanych w ustawieniach projektu) to po stworzeniu nowego pliku `*.stories.ts(x)` zostanie do niego dodane podstawowy kod.
+
 ## How to
 
 ### Integracja React Aria z React Hook Form

@@ -1,0 +1,13 @@
+{
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "autoSnippet.snippets": [
+        {
+            "pattern": "**/*.stories.ts",
+            "snippet": "New Stories File"
+        },
+        {
+            "pattern": "**/*.stories.tsx",
+            "snippet": "New Stories File"
+        },
+    ]
+}
