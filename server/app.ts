@@ -2,9 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import http from 'http';
 import { APIRouter } from './api/router.js';
+import { CONFIG } from './config.js';
 
 const app = express()
-const port = process.env.SERVER_PORT || 3000
+const port = CONFIG.SERVER_PORT
 const server = http.createServer(app);
 
 app.use(cors({

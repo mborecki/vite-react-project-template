@@ -1,0 +1,2 @@
+# Hack aby pliki .sh miały poprawne zakończenia linii w kontenerze Docker
+*.sh text eol=lf

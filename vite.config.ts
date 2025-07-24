@@ -39,6 +39,7 @@ export default defineConfig({
             'server/**/*.{test,spec}.?(c|m)[jt]s?(x)'
           ],
           name: 'server',
+          setupFiles: ["./server/.test-utils/mongo-memory-server.ts"],
         },
       },
       {
