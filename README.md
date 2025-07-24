@@ -39,6 +39,17 @@ Szablon przygotowany z myslą o pracy w środowisku:
 
 ------------------------------------------------
 
+## Środowiska
+
+### Developerskie
+
+Szablon zakłada że developer ma lokalnie uruchomionego Dockera
+
+Inicjalizacja bazy danych:
+```
+docker compose -p template-project -f ./.docker/dev/docker-compose.yml up --build -d
+```
+
 ## Ustawienia edytora (VS Code)
 
 ### Nowy plik `*.stories.ts(x)`
