@@ -7,7 +7,7 @@ interface Post {
 export type PostDoc = HydratedDocument<Post>
 
 export const PostSchema = new Schema<Post>({
-
+    name: String
 })
 
 if (mongoose.models.Page) {
