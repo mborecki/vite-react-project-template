@@ -6,6 +6,7 @@ const config: StorybookConfig = {
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   "addons": [
+    "@storybook/addon-themes",
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
     "@storybook/addon-vitest"

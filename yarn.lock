@@ -2873,6 +2873,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-themes@npm:^9.0.18":
+  version: 9.0.18
+  resolution: "@storybook/addon-themes@npm:9.0.18"
+  dependencies:
+    ts-dedent: "npm:^2.0.0"
+  peerDependencies:
+    storybook: ^9.0.18
+  checksum: 10c0/1e4467ca8c8e96804370f06d5eb7a03f9fd3af6e6d7b0e7c360247e7e52cc18d6cbb7bcfc9332d609f4fab86e7e469feda854be39880ffe8ab7c680d83efd2bd
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-vitest@npm:9.0.17":
   version: 9.0.17
   resolution: "@storybook/addon-vitest@npm:9.0.17"
@@ -7898,6 +7909,7 @@ __metadata:
     "@eslint/js": "npm:^9.30.1"
     "@storybook/addon-a11y": "npm:9.0.17"
     "@storybook/addon-docs": "npm:9.0.17"
+    "@storybook/addon-themes": "npm:^9.0.18"
     "@storybook/addon-vitest": "npm:9.0.17"
     "@storybook/react-vite": "npm:9.0.17"
     "@tanstack/react-query": "npm:^5.83.0"
