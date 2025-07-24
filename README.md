@@ -5,6 +5,10 @@
 
 ## Technologie/elementy
 
+Szablon przygotowany z myslą o pracy w środowisku:
+ * node 22.14.0
+ * yarn 4 (jest cześcią repo)
+
 * Bazowa struktura: [vite.dev](https://vite.dev/)
 * Frontend:
   * [react](https://react.dev/)
@@ -15,12 +19,23 @@
   * Podstawowe Komponenty: [React Aria](https://react-spectrum.adobe.com/react-aria/getting-started.html)
   * Obsługa formularzy: [React Hook Form](https://react-hook-form.com/)
 * Backend:
-  * TBA
+  * Podstawowa bilbioteka: [Expressjs](https://expressjs.com/)
+    * Obsługa zapytań CORS: [cors](https://www.npmjs.com/package/cors)
+  * Testy obsługi zapytań: [supertest](https://www.npmjs.com/package/supertest)
 * Testy:
   * Wizualne: [Storybook](https://storybook.js.org/)
   * Jednostkowe: [Vitest](https://vitest.dev/)
   * Mockowanie komunikacji z serwerem [Mock Service Worker](https://mswjs.io/)
   * UI: [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+
+
+## Polecenia
+
+* `yarn dev` - serwer developerski frontendu
+* `yarn server:dev` - server developerski backendu
+* `yarn storybook` - server developerski Storybook
+* `yarn test` - testy jednostkowe frontend + backend
+* `yarn test:all` - testy jednostrowe frontend + backend + storybook
 
 ------------------------------------------------
 
@@ -61,3 +76,7 @@ Przykład: `src\modules\post\use-post.test.tsx`
 #### Źródła
 
 * [TanStack Query Testing](https://tanstack.com/query/v5/docs/framework/react/guides/testing)
+
+### Testowanie obsługi zapytań w API
+
+Przykład:  `server\api\router.test.ts`

@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "moduleResolution": "nodenext",
+        "module": "nodenext",
+        "verbatimModuleSyntax": true,
+        "lib": [
+            "ES2023"
+        ],
+        "target": "ES2022",
+        "outDir": "../dist-server",
+        "rootDirs": [
+            ".",
+            "../shared/"
+        ],
+        "paths": {
+            "@shared": [
+                "../shared/index.ts"
+            ]
+        }
+    },
+}
