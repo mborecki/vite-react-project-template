@@ -1,0 +1,38 @@
+@mixin LigthTheme() {
+    --bg-color-1: #d9d9d9;
+    --text-color-1: #020202;
+}
+
+@mixin DarkTheme() {
+    --bg-color-1: #020202;
+    --text-color-1: #d9d9d9;
+}
+
+:root,
+:root.light {
+    @include LigthTheme()
+}
+
+:root.dark {
+    @include DarkTheme()
+}
+
+
+@media (prefers-color-scheme: light) {
+    :root:not(.light):not(.dark) {
+        @include LigthTheme()
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not(.light):not(.dark) {
+        @include DarkTheme()
+    }
+}
+
+
+
+body {
+    background: var(--bg-color-1);
+    color: var(--text-color-1);
+}

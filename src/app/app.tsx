@@ -4,6 +4,7 @@ import { getHomeRoute, getSubpageRoute } from "./routes";
 import { Home } from "./home";
 import { MainLayout } from "./layout";
 import { SubPage } from "./sub";
+import { Page404 } from "./page404";
 
 export function App() {
      const navigate = useNavigate();
@@ -14,6 +15,7 @@ export function App() {
                     <Route path={getHomeRoute()} element={<Home />}/>
                     <Route path={getSubpageRoute()} element={<SubPage />}/>
                </Route>
+               <Route path={'/*'} element={<Page404 />} />
           </Routes>
      </RouterProvider>
 }
