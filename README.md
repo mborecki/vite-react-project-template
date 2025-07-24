@@ -22,6 +22,9 @@ Szablon przygotowany z myslą o pracy w środowisku:
   * Podstawowa bilbioteka: [Expressjs](https://expressjs.com/)
     * Obsługa zapytań CORS: [cors](https://www.npmjs.com/package/cors)
   * Testy obsługi zapytań: [supertest](https://www.npmjs.com/package/supertest)
+  * Baza danych: [MongoDB](https://www.mongodb.com/)
+    * Biblioteka: [mongoose](https://mongoosejs.com/)
+    * Podgląd w środowisku developerskim: [mongo-express](https://hub.docker.com/_/mongo-express)
 * Testy:
   * Wizualne: [Storybook](https://storybook.js.org/)
   * Jednostkowe: [Vitest](https://vitest.dev/)
