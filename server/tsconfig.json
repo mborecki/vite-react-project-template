@@ -17,7 +17,7 @@
         ],
         "paths": {
             "@shared": [
-                "../shared/index.ts"
+                "../shared/index.mts"
             ]
         }
     },
