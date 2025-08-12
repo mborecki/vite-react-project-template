@@ -8,10 +8,16 @@ export function TodoList() {
 
     }, []);
 
-    const {items} = useTodolist();
+    const { items } = useTodolist();
 
     return <div>
-        <p>//TODO: lista</p>
+        <ol>
+            {
+                items.map((item, index) => {
+                    return <li key={index}>{item}</li>
+                })
+            }
+        </ol>
         <OneInputForm onSubmit={onSubmit} />
     </div>
 }

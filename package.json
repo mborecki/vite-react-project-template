@@ -57,6 +57,7 @@
     "eslint-plugin-storybook": "9.0.17",
     "globals": "^16.3.0",
     "jsdom": "^26.1.0",
+    "msw-storybook-addon": "^2.0.5",
     "playwright": "^1.54.1",
     "react-aria-components": "^1.10.1",
     "sass-embedded": "^1.89.2",
@@ -68,5 +69,10 @@
     "vitest": "^3.2.4",
     "vitest-mongodb": "^1.0.1"
   },
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "yarn@4.9.2",
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
 }

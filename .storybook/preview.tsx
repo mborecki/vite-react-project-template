@@ -1,6 +1,11 @@
-import type { Preview  } from '@storybook/react-vite'
+import type { Preview } from '@storybook/react-vite'
 import { withThemeByClassName } from '@storybook/addon-themes';
 import '../src/globals.scss';
+import { initialize, mswLoader } from 'msw-storybook-addon';
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+initialize();
 
 const preview: Preview = {
   parameters: {
@@ -26,7 +31,14 @@ const preview: Preview = {
       },
       defaultTheme: 'light',
     }),
+    (story) => {
+      const queryClient = new QueryClient()
+      return < QueryClientProvider client={queryClient} >
+        {story()}
+      </QueryClientProvider >
+    },
   ],
+  loaders: [mswLoader]
 };
 
 export default preview;
