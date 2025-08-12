@@ -4,11 +4,11 @@ import { useCallback } from "react";
 
 export function TodoList() {
 
-    const onSubmit = useCallback(() => {
+    const { items, addItem } = useTodolist();;
+    const onSubmit = useCallback((value: string) => {
+        addItem(value);
+    }, [addItem]);
 
-    }, []);
-
-    const { items } = useTodolist();
 
     return <div>
         <ol>
