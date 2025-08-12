@@ -10,7 +10,10 @@ describe('getPost()', () => {
             http.get('http://localhost' + NetworkAPI.getPost(), ({ request, params }) => {
                 console.log(request.method, request.url)
                 return HttpResponse.json({
-                    id: params.id
+                    success: true,
+                    data: {
+                        id: params.id
+                    }
                 });
             })
         )

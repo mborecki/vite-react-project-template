@@ -9,7 +9,7 @@ export class AppError extends Error {
     type: AppErrorType;
     code: number
 
-    constructor(message: string, type: AppErrorType) {
+    constructor(message: string = "Nieznany błąd", type: AppErrorType = AppErrorType.unknown) {
         super(message);
 
         this.type = type;
