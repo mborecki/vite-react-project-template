@@ -1,6 +1,7 @@
 import { json, Router, type Request, type Response } from "express";
-import { addPost } from "../selectors/add-post.js";
-import { type APIError, type APIResponse } from "@shared";
+import { buildOKResponse } from "./build-ok-response.js";
+import { getTodolist } from "../selectors/get-todolist.js";
+import { addTodolistItem } from "../selectors/add-todolist-item.js";
 
 export const APIRouter = Router();
 
@@ -10,26 +11,19 @@ APIRouter.get('/', async (_req: Request, res: Response) => {
     res.send('Hello World!');
 })
 
-APIRouter.post('/post', async (_req: Request, res: Response) => {
-    console.log('/post');
-    await addPost(`Post: ${Math.random()}`);
+APIRouter.get('/todolist', async (_req: Request, res: Response) => {
+    const data = await getTodolist();
+    res.send(buildOKResponse(data));
+})
+
+APIRouter.post('/todolist', async (req: Request, res: Response) => {
+    const {value} = req.body;
+
+    await addTodolistItem(value);
 
     res.send(buildOKResponse());
 })
 
-function buildOKResponse<T = {}>(data?: T): APIResponse<T> {
-    return {
-        success: true,
-        data
-    }
-}
 
-function _buildErrorResponse(error: APIError): APIResponse<never> {
-    return {
-        success: false,
-        error: {
-            ...error,
-            message: error.message
-        }
-    }
-}
+
+

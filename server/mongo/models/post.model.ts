@@ -1,17 +1,17 @@
 import mongoose, { Schema, model, type HydratedDocument } from "mongoose"
 
-interface Post {
-    name: string
+interface TodoListItem {
+    value: string
 }
 
-export type PostDoc = HydratedDocument<Post>
+export type TodoListItemDoc = HydratedDocument<TodoListItem>
 
-export const PostSchema = new Schema<Post>({
-    name: String
+export const TodoListItemtSchema = new Schema<TodoListItem>({
+    value: String
 })
 
 if (mongoose.models.Page) {
-    mongoose.deleteModel('Page')
+    mongoose.deleteModel('TodoListItem')
 }
 
-export const PostModel = model<Post>('Post', PostSchema);
+export const TodoListItemModel = model<TodoListItem>('TodoListItem', TodoListItemtSchema);

@@ -21,7 +21,6 @@ Szablon przygotowany z myslą o pracy w środowisku:
 * Backend:
   * Podstawowa bilbioteka: [Expressjs](https://expressjs.com/)
     * Obsługa zapytań CORS: [cors](https://www.npmjs.com/package/cors)
-  * Testy obsługi zapytań: [supertest](https://www.npmjs.com/package/supertest)
   * Baza danych: [MongoDB](https://www.mongodb.com/)
     * Biblioteka: [mongoose](https://mongoosejs.com/)
     * Podgląd w środowisku developerskim: [mongo-express](https://hub.docker.com/_/mongo-express)
@@ -30,6 +29,8 @@ Szablon przygotowany z myslą o pracy w środowisku:
   * Jednostkowe: [Vitest](https://vitest.dev/)
   * Mockowanie komunikacji z serwerem [Mock Service Worker](https://mswjs.io/)
   * UI: [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+  * Testy obsługi zapytań: [supertest](https://www.npmjs.com/package/supertest)
+  * Testy operacji na bazie danych: [vitest-mongodb](https://github.com/enochchau/vitest-mongodb)
 
 
 ## Polecenia
@@ -75,7 +76,9 @@ Przykład: `src\components\widgets\name-form\name-form.tsx`
 
 ### Mockowanie API w testach aplikacji frontendowej
 
-Przykład: `src\network\requests\get-post.test.ts`
+Przykłady:
+ * `src\network\requests\get-todolist.test.ts`
+ * `src\network\requests\post-todolist-item.test.ts`
 
 #### Źródła
 
@@ -85,7 +88,7 @@ Przykład: `src\network\requests\get-post.test.ts`
 
 ### Testy react hooks z react-query
 
-Przykład: `src\modules\post\use-post.test.tsx`
+Przykład: `src\modules\todolist\use-todolist.test.tsx`
 
 #### Źródła
 
@@ -94,3 +97,18 @@ Przykład: `src\modules\post\use-post.test.tsx`
 ### Testowanie obsługi zapytań w API
 
 Przykład:  `server\api\router.test.ts`
+
+#### Źródła
+
+ * [Supertest](https://www.npmjs.com/package/supertest)
+
+
+### Testowanie obsługi bazy danych
+
+Przykłady:
+ * `server\selectors\get-todolist.test.ts`
+ * `server\selectors\add-todolist-item.test.ts`
+
+#### Źródła
+
+ * [vitest-mongodb](https://github.com/enochchau/vitest-mongodb)

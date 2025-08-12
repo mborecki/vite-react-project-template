@@ -1,33 +1,35 @@
-import { FieldError, Form, Input, Label, TextField } from "react-aria-components";
-import { Controller, useForm } from "react-hook-form";
+import { FieldError, Form, Input, TextField } from "react-aria-components";
 import { Button } from "../../atoms/button/button";
+import { Controller, useForm } from "react-hook-form";
 import { useCallback } from "react";
-import css from './name-form.module.scss';
-
-interface FormData {
-    name: string
-}
+import css from "./one-input-form.module.scss";
 
 interface Props {
-    onSubmit(data: FormData): void
+    onSubmit(value: string): void
 }
 
-export function NameForm({ onSubmit }: Props) {
+interface FormData {
+    value: string
+}
+
+export function OneInputForm({ onSubmit }: Props) {
 
     const { handleSubmit, control } = useForm<FormData>({
         defaultValues: {
-            name: ''
+            value: ''
         }
     });
 
     const _onSubmit = useCallback((data: FormData) => {
-        onSubmit(data);
+        if (data.value) {
+            onSubmit(data.value);
+        }
     }, [onSubmit])
 
-    return <Form onSubmit={handleSubmit(_onSubmit)} className={css.form}>
+    return <Form onSubmit={handleSubmit(_onSubmit)} className={css.container}>
         <Controller
             control={control}
-            name="name"
+            name="value"
             render={({
                 field: { name, value, onChange, onBlur, ref },
                 fieldState: { invalid, error }
@@ -40,13 +42,13 @@ export function NameForm({ onSubmit }: Props) {
                     isRequired
                     validationBehavior="aria"
                     isInvalid={invalid}
+                    aria-label="Nowy element"
                 >
-                    <Label>Name</Label>
                     <Input ref={ref} />
                     <FieldError>{error?.message}</FieldError>
                 </TextField>
             }}
         />
-        <Button type="submit">Wyślij</Button>
+        <Button type="submit">Dodaj</Button>
     </Form>
 }

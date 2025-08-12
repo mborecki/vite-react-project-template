@@ -1,9 +1,9 @@
 import { RouterProvider } from "react-aria-components";
 import { Route, Routes, useHref, useNavigate } from "react-router";
-import { getHomeRoute, getSubpageRoute } from "./routes";
+import { getHomeRoute, getTodoListPage } from "./routes";
 import { Home } from "./home";
 import { MainLayout } from "./layout";
-import { SubPage } from "./sub";
+import { TodoListPage } from "./todolist";
 import { Page404 } from "./page404";
 
 export function App() {
@@ -13,7 +13,7 @@ export function App() {
           <Routes>
                <Route element={<MainLayout />}>
                     <Route path={getHomeRoute()} element={<Home />}/>
-                    <Route path={getSubpageRoute()} element={<SubPage />}/>
+                    <Route path={getTodoListPage()} element={<TodoListPage />}/>
                </Route>
                <Route path={'/*'} element={<Page404 />} />
           </Routes>
