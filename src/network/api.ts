@@ -1,5 +1,8 @@
 export const NetworkAPI = {
-    getPost(id: string = ':id') {
-        return `/post/${id}`
+    getTodolist() {
+        return `/todolist`
+    },
+    postTodolistItem() {
+        return `/todolist`
     }
 }
